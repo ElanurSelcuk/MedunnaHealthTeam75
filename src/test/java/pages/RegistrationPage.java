@@ -7,12 +7,12 @@ import utilities.Driver;
 
 public class RegistrationPage {
 
- public RegistrationPage(){
+ public RegistrationPage() {
   PageFactory.initElements(Driver.getDriver(), this);
  }
 
 
- @FindBy(id="ssn")
+ @FindBy(id = "ssn")
  public WebElement ssnTextBox;
  @FindBy(id = "firstName")
  public WebElement firstnameTextBox;
