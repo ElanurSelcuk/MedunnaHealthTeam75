@@ -32,7 +32,7 @@ import utilities.Driver;
 
                 scenario.attach(screenshot, "image/png", "screenshots");
             }
-
+            Driver.closeDriver();
         }
 
     }
