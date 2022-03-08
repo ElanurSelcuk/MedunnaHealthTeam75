@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class Hooks {
@@ -14,6 +15,22 @@ public class Hooks {
 
     }
 
+    @Before(order = 1, value = "@UIRegistration")
+    public void navigateToRegistrationPage(){
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
+
+    }
+
+    @Before(order = 1, value = "@Appointment")
+    public void navigateToLandingPage(){
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
+
+    }
+
+
+
     @After
     public void tearDown(Scenario scenario){
 
@@ -22,6 +39,8 @@ public class Hooks {
 
             scenario.attach(screenshot, "image/png","screenshots");
         }
+
+//        Driver.closeDriver();
 
     }
 
