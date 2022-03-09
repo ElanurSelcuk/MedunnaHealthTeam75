@@ -16,9 +16,7 @@ import org.junit.runner.RunWith;
 
         tags = "@myappoinments_edit_test_results",
 
-        tags = "@myappointments_check",
-
         dryRun = false
 )
-public class  Runner{
+public class Runner{
 }
