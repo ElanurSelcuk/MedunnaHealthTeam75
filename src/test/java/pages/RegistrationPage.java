@@ -7,12 +7,12 @@ import utilities.Driver;
 
 public class RegistrationPage {
 
- public RegistrationPage() {
+ public RegistrationPage(){
   PageFactory.initElements(Driver.getDriver(), this);
  }
 
 
- @FindBy(id = "ssn")
+ @FindBy(id="ssn")
  public WebElement ssnTextBox;
  @FindBy(id = "firstName")
  public WebElement firstnameTextBox;
@@ -24,7 +24,7 @@ public class RegistrationPage {
  public WebElement emailTextbox;
  @FindBy(xpath = "//*[text()='New password']/following::input")
  public WebElement firstPasswordTextBox;
- @FindBy(id = "secondPassword")
+ @FindBy(id= "secondPassword")
  public WebElement newPasswordTextBox;
  @FindBy(id = "register-submit")
  public WebElement registerButton;
@@ -39,6 +39,5 @@ public class RegistrationPage {
 
  @FindBy(xpath = "//*[@id='strengthBar']/li[contains(@style,'rgb(153, 255, 0)')]")
  public WebElement passwordStrength3;
-
 
 }

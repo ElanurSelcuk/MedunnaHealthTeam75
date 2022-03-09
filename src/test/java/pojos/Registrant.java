@@ -1,28 +1,55 @@
 package pojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Registrant {
 
+
+
+    private String firstName;
+    private String lastName;
     private String ssn;
-    private String firstname;
-    private String lastname;
-    private String username;
-    private String email;
+    private String login;
+    private String langKey;
     private String password;
+    private String email;
+    private String strength;
 
 
-    //variables constructors /getters and setters / toString
+
+
+    //validates constructors/getters and setters/toString
 
 
     public Registrant() {
     }
 
-    public Registrant(String ssn, String firstname, String lastname, String username, String email, String password) {
+    public Registrant(String firstName, String lastName, String ssn, String login, String langKey, String password, String email, String strength) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.ssn = ssn;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.username = username;
-        this.email = email;
+        this.login = login;
+        this.langKey = langKey;
         this.password = password;
+        this.email = email;
+        this.strength = strength;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getSsn() {
@@ -33,36 +60,20 @@ public class Registrant {
         this.ssn = ssn;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getLogin() {
+        return login;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLangKey() {
+        return langKey;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLangKey(String langKey) {
+        this.langKey = langKey;
     }
 
     public String getPassword() {
@@ -73,15 +84,33 @@ public class Registrant {
         this.password = password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStrength() {
+        return strength;
+    }
+
+    public void setStrength(String strength) {
+        this.strength = strength;
+    }
+
     @Override
     public String toString() {
         return "Registrant{" +
-                "ssn='" + ssn + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", ssn='" + ssn + '\'' +
+                ", login='" + login + '\'' +
+                ", langKey='" + langKey + '\'' +
                 ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", strength='" + strength + '\'' +
                 '}';
     }
 }
