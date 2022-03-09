@@ -1,5 +1,8 @@
 package utilities;
 
+
+public class WriteToTxt {
+
 import pojos.Appointment;
 import pojos.Registrant;
 
@@ -53,6 +56,7 @@ public class WriteToTxt {
 
 
     }
+
 
 
 
