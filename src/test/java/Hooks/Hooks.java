@@ -9,13 +9,16 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-
 public class Hooks {
     @Before
     public void setUp(){
-
-
     }
+sevinc_branch
+    @Before(order = 1, value = "@UIRegistration")
+    public void navigateToRegistrationPage(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
+    }
+
 
     //
     public static RequestSpecification spec;
@@ -44,18 +47,19 @@ public class Hooks {
     }
 
 
-
+master
     @After
     public void tearDown(Scenario scenario){
-
         if (scenario.isFailed()) {
             final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-
             scenario.attach(screenshot, "image/png","screenshots");
         }
+ sevinc_branch
+    }
 
 //        Driver.closeDriver();
 
     }
 
+master
 }
