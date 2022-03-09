@@ -13,7 +13,10 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = {"stepdefinitions","Hooks"},
+sevinc_branch
         tags = "@UIRegistration",
+        tags = "@myappointments_check",
+master
         dryRun = false
 )
 public class Runner {
