@@ -1,6 +1,6 @@
-package StepDefinitions.uisteps;
+package stepDefinitions.uisteps;
 
-import Pages.RegistrationPage;
+import pages.RegistrationPage;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

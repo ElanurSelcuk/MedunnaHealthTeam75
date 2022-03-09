@@ -1,5 +1,5 @@
-package StepDefinitions.uisteps;
-import Pages.AppointmentPage;
+package stepDefinitions.uisteps;
+import pages.AppointmentPage;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,7 +9,6 @@ import org.junit.Assert;
 import pojos.Appointment;
 import utilities.Driver;
 
-import static utilities.DateUtils.getDate;
 import static utilities.WriteToTxt.saveAppointData;
 
 public class UIAppointmentSteps {

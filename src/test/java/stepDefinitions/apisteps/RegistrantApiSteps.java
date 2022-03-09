@@ -1,4 +1,4 @@
-package StepDefinitions.apisteps;
+package stepDefinitions.apisteps;
 
 
 import com.github.javafaker.Faker;
