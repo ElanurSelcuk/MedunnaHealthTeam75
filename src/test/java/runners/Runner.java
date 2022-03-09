@@ -12,9 +12,11 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
         features = "./src/test/resources/features",
-        glue = {"stepdefinitions","Hooks"},
-        tags = "@excel_login",
+        glue = {"StepDefinitions","Hooks"},
+        tags = "  @UINegativeRegistration",
         dryRun = false
+
+
 )
 public class Runner {
 }
