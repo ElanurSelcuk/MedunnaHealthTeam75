@@ -5,19 +5,17 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.tr.Fakat;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import pojos.Registrant;
 import utilities.ConfigurationReader;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static io.restassured.RestAssured.given;
 import static junit.framework.TestCase.assertEquals;
+
+import static utilities.ApiUtils.getRequest;
+
+import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.saveRegistrantData;
 import static Hooks.Hooks.spec;
 public class RegistrantApiSteps  {
@@ -25,6 +23,7 @@ public class RegistrantApiSteps  {
     Registrant registrant = new Registrant();
     Faker faker = new Faker();
     Response response;
+    Registrant []registrants;
 
     @Given("user sets the necessary path params")
     public void user_sets_the_necessary_path_params() {
@@ -81,5 +80,35 @@ public class RegistrantApiSteps  {
 
 
     }
+
+
+    @Given("user sends the get request for users data")
+    public void user_sends_the_get_request_for_users_data() {
+
+        response =  getRequest(generateToken(),ConfigurationReader.getProperty("registrant_endpoint"));
+        //    response.prettyPrint();
+
+    }
+    @Given("user deserializes data to Java")
+    public void user_deserializes_data_to_java() throws Exception{
+        // WAys of de-serialization
+        // Object Mapper
+
+        ObjectMapper obj = new ObjectMapper();
+
+        registrants = obj.readValue(response.asString(), Registrant[].class);
+        System.out.println("registrants.length = " + registrants.length);
+        for (int i=0; i<registrants.length;i++){
+            System.out.println( registrants[i].getEmail());
+
+        }
+
+
+    }
+    @Given("user saves the data records to correspondent files")
+    public void user_saves_the_data_records_to_correspondent_files() {
+
+    }
+
 
 }

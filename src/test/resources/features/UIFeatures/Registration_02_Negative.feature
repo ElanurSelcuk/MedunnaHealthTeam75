@@ -14,17 +14,18 @@ Feature:test all registrant data
 
 
     @UINegativeRegistration
-   Scenario Outline:negative test
+    Scenario Outline:negative test
       Then user leaves username blank "<username>"
       And user creates an email without @ sign "<email>"
+      And verifies your username is invalid
+      And verifies your email is invalid
 
 
   Examples:
            |username    |   email              |
-           |            |  ayse76@gmail.com    |
-           |aysegelir   |  ayse76gmail.com     |
-           |aysegelir   |                      |
-           |aysegelir   |  ayse76@gmail        |
+           |            |  ayse76gmail.com     |
+           |            |    ayse76@gmail      |
+
 
 
 

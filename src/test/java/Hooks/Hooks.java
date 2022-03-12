@@ -39,6 +39,12 @@ public class Hooks {
         Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
 
     }
+    @Before(order = 1, value = "@ApiRegistration")
+    public void navigateToRegistrationPage3(){
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("medunna_registration_url"));
+
+    }
 
     @Before(order = 1, value = "@Appointment")
     public void navigateToLandingPage(){

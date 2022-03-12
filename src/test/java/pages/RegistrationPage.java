@@ -18,10 +18,17 @@ public class RegistrationPage {
  public WebElement firstnameTextBox;
  @FindBy(id = "lastName")
  public WebElement lastnameTextBox;
+
  @FindBy(id = "username")
  public WebElement usernameTextBox;
+ @FindBy(xpath = "//*[contains(text(), 'Your username is required.')]")
+ public WebElement requiredUserNameText;
+
  @FindBy(id = "email")
  public WebElement emailTextbox;
+ @FindBy (xpath = "//div[@class='invalid-feedback']")
+ public WebElement invalidEmailText;
+
  @FindBy(xpath = "//*[text()='New password']/following::input")
  public WebElement firstPasswordTextBox;
  @FindBy(id= "secondPassword")

@@ -1,6 +1,7 @@
 package pojos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.github.javafaker.Internet;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Registrant {
@@ -113,4 +114,6 @@ public class Registrant {
                 ", strength='" + strength + '\'' +
                 '}';
     }
+
+
 }
