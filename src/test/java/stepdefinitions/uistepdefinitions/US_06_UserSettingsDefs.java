@@ -1,19 +1,18 @@
-package stepdefinitions;
+package stepdefinitions.uistepdefinitions;
 
-import Pages.LoginPage;
-import Pages.UserSettingsPage;
+import Pages.US06_LoginPage;
+import Pages.US_06UserSettingsPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
 import static org.junit.Assert.*;
 
 public class US_06_UserSettingsDefs {
-LoginPage loginPage=new LoginPage();
-UserSettingsPage userSettings=new UserSettingsPage();
+US06_LoginPage loginPage=new US06_LoginPage();
+US_06UserSettingsPage userSettings=new US_06UserSettingsPage();
 
     @Given("user goes to homepage")
     public void user_goes_to_homepage() throws InterruptedException {
@@ -43,8 +42,8 @@ UserSettingsPage userSettings=new UserSettingsPage();
     @Then("verify the user info")
     public void verify_the_user_info() {
 
-Driver.waitAndGetText(userSettings.title,2);
-
+String titleText=Driver.waitAndGetText(userSettings.title,2);
+assertTrue(titleText.contains("User"));
     }
     @Given("user verify the update option for firstname")
     public void user_verify_the_update_option_for_firstname() {
@@ -82,6 +81,7 @@ Driver.waitAndGetText(userSettings.title,2);
     public void user_verify_firstname_should_not_be_blank() {
   userSettings.firstName.clear();
   userSettings.saveButton.click();
+
   String firstNameMessage=Driver.waitAndGetText(userSettings.firstNameFeedBack,2);
 assertEquals(firstNameMessage,"Your first name is required.");
 
@@ -94,8 +94,6 @@ assertEquals(firstNameMessage,"Your first name is required.");
         String lastNameMessage=Driver.waitAndGetText(userSettings.lastNameFeedBack,2);
         assertEquals(lastNameMessage,"Your last name is required.");
 
-
-
     }
     @Given("user verify e-mail should not be created without @ sign and  .com extension")
     public void user_verify_e_mail_should_not_be_created_without_sign_and_extension() {
@@ -106,15 +104,5 @@ Driver.wait(2);
         String emailMessage=Driver.waitAndGetText(userSettings.emailFeedBack,2);
         assertEquals(emailMessage,"This field is invalid");
 
-
-
     }
-
-
-
-
-
-
-
-
 }

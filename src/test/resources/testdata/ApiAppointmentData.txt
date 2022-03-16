@@ -1,0 +1,4 @@
+Appointment{firstName='<firstName>', lastName='<lastName>', ssn='458-15-8874', email='<email', phone='5478965421', startDate='<date>'}
+Appointment{firstName='<firstName>', lastName='<lastName>', ssn='458-15-8874', email='<email', phone='5478965421', startDate='<date>'}
+Appointment{firstName='Ayse', lastName='Dagli', ssn='458-15-8874', email='aysed@gmail.com', phone='5478965421', startDate='2022-03-15'}
+Appointment{firstName='Ayse', lastName='Dagli', ssn='458-15-8874', email='aysed@gmail.com', phone='5478965421', startDate='2022-03-15'}

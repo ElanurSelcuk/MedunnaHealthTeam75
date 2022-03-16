@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class UserSettingsPage {
-public UserSettingsPage(){
+public class US_06UserSettingsPage {
+public US_06UserSettingsPage(){
 
     PageFactory.initElements(Driver.getDriver(),this);
 
